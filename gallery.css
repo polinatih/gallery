@@ -1,0 +1,96 @@
+body {
+    background-color: #001021;
+    font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 40px;
+  color: white;
+}
+.gallery-cont{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    height: 700px;
+}
+.line{
+    border: none;
+    border-top: 2px solid #fcfafa; 
+    margin: -20px 0 ;            
+    width: 70%;                 
+}
+.div1 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+}
+
+.div2 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+}
+
+.div3 {
+    grid-row: span 3 / span 3;
+    grid-column-start: 4;
+}
+
+.div4 {
+    grid-row: span 3 / span 3;
+    grid-column-start: 5;
+}
+
+.div5 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+.div6 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 4;
+}
+        
+.div1 img, .div2 img, .div3 img, .div4 img, .div5 img, .div6 img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.div1, .div2, .div3, .div4, .div5, .div6 {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Стили для выскакивающей надписи */
+.div1::after, .div2::after, .div3::after, .div4::after, .div5::after, .div6::after {
+    content: attr(data-text); /* Замените на нужный текст */
+    align-content: center;
+    position: absolute;
+    bottom: 0px; 
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Цвет фона и прозрачность */
+    color: white;
+    width: 100%;
+    padding: 20px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 16px; /* Размер шрифта */
+    border-radius: 10px;
+
+}
+
+
+
+/* Показываем надпись при наведении */
+.div1:hover::after, .div2:hover::after, .div3:hover::after, .div4:hover::after, .div5:hover::after, .div6:hover::after {
+    opacity: 1;
+}
+
+/* Стили для изображений внутри элементов */
